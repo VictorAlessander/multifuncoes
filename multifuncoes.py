@@ -2,6 +2,7 @@
 
 import getpass
 import sys
+import os
 
 def menu():
 	print("+---------------------------+\n"
@@ -11,16 +12,16 @@ def menu():
 		  "|[4] Sucessor e antecessor  |\n"
 		  "|[5] Contador de vogais     |\n"
 		  "|[6] Buscar arquivo .txt    |\n"
-		  "|[0] Sair                   |\n"
+		  "|[S] Sair                   |\n"
 		  "+---------------------------+\n")
 
 def ajuda():
-	print("[1] Será avaliado se o valor digitado é múltiplo de cinco ou não\n"
+	print("\n[1] Será avaliado se o valor digitado é múltiplo de cinco ou não\n"
 		  "[2] Digite um valor qualquer e será imprimido na tela o valor digitado elevado ao cubo\n"
 		  "[3] Será avaliado se o valor enviado é par ou ímpar\n"
 		  "[4] Exibirá na tela o sucessor e antecessor do número informado\n"
 		  "[5] Esta função contará quantas vogais e quantas consoantes estão presentes na palavra enviada\n"
-		  "[6] Procura um arquivo .txt e abre-o para leitura")
+		  "[6] Procura um arquivo .txt e abre-o para leitura\n")
 
 def mult_cinco(valor):
 	if(valor % 5 == 0):
@@ -83,6 +84,7 @@ while(erro <= 3):
 
 while(True):
 	try:
+		os.system("cls")
 		menu()
 		print("Digite 'ajuda' para mais informações\n")
 		opcao = str(input(">> "))
@@ -91,7 +93,7 @@ while(True):
 	else:
 		pass
 
-	if(opcao == '0'):
+	if(opcao == 's' or opcao == 'S'):
 		print("[*] Programa finalizado")
 		exit()
 
@@ -156,3 +158,4 @@ while(True):
 
 	elif(opcao == "ajuda"):
 		ajuda()
+		input("Pressione qualquer tecla para continuar...")
